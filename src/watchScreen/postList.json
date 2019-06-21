@@ -1,0 +1,39 @@
+{
+  "title": "Post List Data",
+  "description": "Your app fetched this from a remote endpoint!",
+  "post": [
+    {
+      "id": "1",
+      "name": "Aqil Gifari",
+      "status": "Assalamu'alaikum",
+      "hastag": "#bismillah",
+      "time": "1 Minute ago",
+      "react": " 1M",
+      "comment": "1M",
+      "share": " 1M",
+      "avatar": "https://scontent-sin6-2.xx.fbcdn.net/v/t1.0-9/62002010_2277671888984017_8204108312476647424_n.jpg?_nc_cat=111&_nc_ht=scontent-sin6-2.xx&oh=2bf4028b1ff065b545500e6541d05d00&oe=5D8D84F9",
+      "imagePost": [
+        {
+          "id":"1",
+          "image": "https://scontent-sin6-2.xx.fbcdn.net/v/t1.0-9/62531593_2283356235082249_4139266279024361472_n.jpg?_nc_cat=101&_nc_ht=scontent-sin6-2.xx&oh=b713fb46616176d527d21f48906b030c&oe=5DC4D418"
+        }
+      ]
+    },
+    {
+      "id": "2",
+      "name": "Aqil Gifari",
+      "status": "Assalamu'alaikum",
+      "hastag": "#bismillah",
+      "time": "1 Minute ago",
+      "react": " 1M",
+      "comment": "1M",
+      "share": " 1M",
+      "avatar": "https://scontent-sin6-2.xx.fbcdn.net/v/t1.0-9/62002010_2277671888984017_8204108312476647424_n.jpg?_nc_cat=111&_nc_ht=scontent-sin6-2.xx&oh=2bf4028b1ff065b545500e6541d05d00&oe=5D8D84F9",
+      "imagePost": [
+        {
+          "image": "https://scontent-sin6-2.xx.fbcdn.net/v/t1.0-9/62531593_2283356235082249_4139266279024361472_n.jpg?_nc_cat=101&_nc_ht=scontent-sin6-2.xx&oh=b713fb46616176d527d21f48906b030c&oe=5DC4D418"
+        }
+      ]
+    }
+  ]
+}

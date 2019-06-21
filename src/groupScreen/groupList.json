@@ -1,0 +1,26 @@
+{
+  "title": "Group List Data",
+  "description": "Your app fetched this from a remote endpoint!",
+  "group": [
+    {
+      "id": "1",
+      "name": "Aqigif_fast",
+      "imageGroup": "https://scontent-sin6-2.xx.fbcdn.net/v/t1.0-9/62531593_2283356235082249_4139266279024361472_n.jpg?_nc_cat=101&_nc_ht=scontent-sin6-2.xx&oh=b713fb46616176d527d21f48906b030c&oe=5DC4D418"
+    },
+    {
+      "id": "2",
+      "name": "Arkademy",
+      "imageGroup": "https://scontent-sin6-2.xx.fbcdn.net/v/t1.0-9/56242670_522854754909416_8357556670645141504_n.jpg?_nc_cat=101&_nc_ht=scontent-sin6-2.xx&oh=c483d9b0e3c5347fe4c95c6ee1c663bb&oe=5DBE3EEE"
+    },
+    {
+      "id": "3",
+      "name": "Nussa",
+      "imageGroup": "https://m.media-amazon.com/images/M/MV5BZThkYjdjNWEtMDM2MS00MDllLWI2OGEtN2JhMmRhZjdmNDUwXkEyXkFqcGdeQXVyNjUyMDYyNDE@._V1_SX1777_CR0,0,1777,999_AL_.jpg"
+    },
+    {
+      "id": "4",
+      "name": "Rara",
+      "imageGroup": "https://1.bp.blogspot.com/-q3N-q58nYK4/XD2xM7fmeyI/AAAAAAAAItA/-A33ccanyHUjtdzeFFZqA1XBEvnUCUICgCLcBGAs/s640/nussa.png"
+    }
+  ]
+}

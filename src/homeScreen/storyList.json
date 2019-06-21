@@ -1,0 +1,30 @@
+{
+  "title": "Story List Data",
+  "description": "Your app fetched this from a remote endpoint!",
+  "story": [
+    {
+      "id": "1",
+      "name": "Your Story",
+      "avatar": "https://scontent-sin6-2.xx.fbcdn.net/v/t1.0-9/62002010_2277671888984017_8204108312476647424_n.jpg?_nc_cat=111&_nc_ht=scontent-sin6-2.xx&oh=2bf4028b1ff065b545500e6541d05d00&oe=5D8D84F9",
+      "imageStory": "https://scontent-sin6-2.xx.fbcdn.net/v/t1.0-9/62531593_2283356235082249_4139266279024361472_n.jpg?_nc_cat=101&_nc_ht=scontent-sin6-2.xx&oh=b713fb46616176d527d21f48906b030c&oe=5DC4D418"
+    },
+    {
+      "id": "2",
+      "name": "Arkademy",
+      "avatar": "https://scontent-sin6-2.xx.fbcdn.net/v/t1.0-9/30124145_311767249351502_9000457894664526296_n.jpg?_nc_cat=110&_nc_ht=scontent-sin6-2.xx&oh=cc25f112994e38a1eb6e19964dccbc2e&oe=5D916FFC",
+      "imageStory": "https://scontent-sin6-2.xx.fbcdn.net/v/t1.0-9/56242670_522854754909416_8357556670645141504_n.jpg?_nc_cat=101&_nc_ht=scontent-sin6-2.xx&oh=c483d9b0e3c5347fe4c95c6ee1c663bb&oe=5DBE3EEE"
+    },
+    {
+      "id": "3",
+      "name": "Nussa",
+      "avatar": "https://awsimages.detik.net.id/community/media/visual/2018/12/20/aee0e9a9-fb25-4185-9e8b-246e21b28ba8_169.png?w=780&q=90",
+      "imageStory": "https://m.media-amazon.com/images/M/MV5BZThkYjdjNWEtMDM2MS00MDllLWI2OGEtN2JhMmRhZjdmNDUwXkEyXkFqcGdeQXVyNjUyMDYyNDE@._V1_SX1777_CR0,0,1777,999_AL_.jpg"
+    },
+    {
+      "id": "4",
+      "name": "Rara",
+      "avatar": "https://i.pinimg.com/236x/e3/05/3d/e3053dc43eb889c6c43f0e4788e99a50.jpg",
+      "imageStory": "https://1.bp.blogspot.com/-q3N-q58nYK4/XD2xM7fmeyI/AAAAAAAAItA/-A33ccanyHUjtdzeFFZqA1XBEvnUCUICgCLcBGAs/s640/nussa.png"
+    }
+  ]
+}
