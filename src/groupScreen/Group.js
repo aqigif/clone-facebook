@@ -17,14 +17,8 @@ class Group extends Component {
     }
   }
 
-  static navigationOptions = {
-    header: null
-  }
   render() {
     return (
-      <View style={styles.container}>
-        <Head />
-        <Navbar />
         <View style={styles.body}>
           <ScrollView>
             <GroupAction />
@@ -74,7 +68,6 @@ class Group extends Component {
             </View>
           </ScrollView>
         </View>
-      </View>
     );
   }
 }

@@ -14,14 +14,8 @@ class Watch extends Component {
     }
   }
 
-  static navigationOptions = {
-    header: null
-  }
   render() {
     return (
-      <View style={styles.container}>
-        <Head />
-        <Navbar />
         <View style={styles.body}>
           <ScrollView>
             <View style={styles.postList}>
@@ -46,7 +40,6 @@ class Watch extends Component {
             </View>
           </ScrollView>
         </View>
-      </View>
     );
   }
 }
@@ -58,16 +51,7 @@ const styles = StyleSheet.create({
     flex: 1,
     backgroundColor: '#DCDEE3',
   },
-  story: {
-    height: 214,
-    marginTop: 10,
-    marginBottom: 5,
-    flex: 1,
-    backgroundColor: '#fff',
-    flexDirection: 'row',
-    paddingLeft: 20,
-    alignItems: "center",
-  },
+  
   postList: {
     flex: 1,
     backgroundColor: '#fff',
