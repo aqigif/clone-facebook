@@ -1,0 +1,60 @@
+{
+  "title": "Notification List Data",
+  "description": "Your app fetched this from a remote endpoint!",
+  "notification": [
+    {
+      "id": "1",
+      "type":"New",
+      "content": [
+        {
+          "id":"1",
+          "avatar": "https://scontent-sin6-2.xx.fbcdn.net/v/t1.0-9/62531593_2283356235082249_4139266279024361472_n.jpg?_nc_cat=101&_nc_ht=scontent-sin6-2.xx&oh=b713fb46616176d527d21f48906b030c&oe=5DC4D418",
+          "content":"Nussa and 150M others have birthday today. Let them know you're thinking about them!",
+          "time":"10 Minute ago"
+        },
+        {
+          "id":"2",
+          "avatar": "https://scontent-sin6-2.xx.fbcdn.net/v/t1.0-9/62531593_2283356235082249_4139266279024361472_n.jpg?_nc_cat=101&_nc_ht=scontent-sin6-2.xx&oh=b713fb46616176d527d21f48906b030c&oe=5DC4D418",
+          "content":"1000 likes",
+          "time":"10 Minute ago"
+        },
+        {
+          "id":"3",
+          "avatar": "https://scontent-sin6-2.xx.fbcdn.net/v/t1.0-9/62531593_2283356235082249_4139266279024361472_n.jpg?_nc_cat=101&_nc_ht=scontent-sin6-2.xx&oh=b713fb46616176d527d21f48906b030c&oe=5DC4D418",
+          "content":"",
+          "time":"10 Minute ago"
+        },
+        {
+          "id":"4",
+          "avatar": "https://scontent-sin6-2.xx.fbcdn.net/v/t1.0-9/62531593_2283356235082249_4139266279024361472_n.jpg?_nc_cat=101&_nc_ht=scontent-sin6-2.xx&oh=b713fb46616176d527d21f48906b030c&oe=5DC4D418",
+          "content":"",
+          "time":"10 Minute ago"
+        },
+        {
+          "id":"5",
+          "avatar": "https://scontent-sin6-2.xx.fbcdn.net/v/t1.0-9/62531593_2283356235082249_4139266279024361472_n.jpg?_nc_cat=101&_nc_ht=scontent-sin6-2.xx&oh=b713fb46616176d527d21f48906b030c&oe=5DC4D418",
+          "content":"",
+          "time":"10 Minute ago"
+        }
+      ]
+    },
+    {
+      "id": "2",
+      "type":"Earlier",
+      "content": [
+        {
+          "id":"1",
+          "avatar": "https://scontent-sin6-2.xx.fbcdn.net/v/t1.0-9/62531593_2283356235082249_4139266279024361472_n.jpg?_nc_cat=101&_nc_ht=scontent-sin6-2.xx&oh=b713fb46616176d527d21f48906b030c&oe=5DC4D418",
+          "content":"Nussa and 150M others have birthday today. Let them know you're thinking about them!",
+          "time":"10 Minute ago"
+        },
+        {
+          "id":"2",
+          "avatar": "https://scontent-sin6-2.xx.fbcdn.net/v/t1.0-9/62531593_2283356235082249_4139266279024361472_n.jpg?_nc_cat=101&_nc_ht=scontent-sin6-2.xx&oh=b713fb46616176d527d21f48906b030c&oe=5DC4D418",
+          "content":"",
+          "time":"10 Minute ago"
+        }
+      ]
+    }
+  ]
+}
