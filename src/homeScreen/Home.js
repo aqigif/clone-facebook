@@ -8,6 +8,10 @@ import StoryList from './components/StoryList';
 import PostList from './components/PostList';
 
 
+const axios = require('axios');
+ 
+
+
 class Home extends Component {
   constructor() {
     super()

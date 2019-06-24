@@ -6,7 +6,7 @@ import Language from './components/Language';
 import OrLine from './components/OrLine';
 import RegisButton from './components/RegisButton';
 
-
+const axios = require('axios')
 class Login extends Component {
   constructor(props) {
     super(props);
@@ -15,6 +15,21 @@ class Login extends Component {
       forgotOrRegisterStateText: 'Forgot Your Password?'
     }
   }
+  componentDidMount(){
+    axios.get('http://192.168.0.15:3000/users')
+.then(function (response) {
+    // handle success
+    console.log(response);
+  })
+  .catch(function (error) {
+    // handle error
+    console.log(error);
+  })
+  .finally(function () {
+    // always executed
+  });
+  }
+
   static navigationOptions = { header: null }
   onFocus() {
     this.setState({
