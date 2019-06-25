@@ -2,151 +2,68 @@ const express = require('express');
 const router = express.Router();
 const model = require('../models/index');
 const bodyParser = require('body-parser');
+var jwt = require('jsonwebtoken');
+const md5 = require('md5');
+const bcrypt = require('bcryptjs')
+
 // GET posts listing.
-router.get('', async function (req, res, next) {
-    try {
-      const posts = await model.posts.findAll({include: ['users']});
-      if (posts.length !== 0) {
-        res.json({
-          'status': 'OK',
-          'messages': '',
-          'data': posts
-        })
-      } else {
-        res.json({
-          'status': 'ERROR',
-          'messages': 'EMPTY',
-          'data': {}
-        })
-      }
-    } catch (err) {
-      res.json({
-        'status': 'ERROR',
-        'messages': err.messages,
-        'data': {}
-      })
-    }
+router.get('/get', async function (req, res, next) {
+  const posts = await model.posts.findAll({include: ['users']});
+  jwt.sign({posts:posts.id},'secretkey',(err,token)=>{
+    res.status(201).json({token});
   });
+});
 
 
 // GET post ID listing.
-router.get('/:id', async function (req, res, next) {
-  try {
-    const postId = req.params.id;
-    const posts = await model.posts.findByPk(postId, {include: ['users']});
-    if (posts.length !== 0) {
-      res.json({
-        'status': 'OK',
-        'messages': '',
-        'data': posts
-      })
-    } else {
-      res.json({
-        'status': 'ERROR',
-        'messages': 'EMPTY',
-        'data': {}
-      })
-    }
-  } catch (err) {
-    res.json({
-      'status': 'ERROR',
-      'messages': err.messages,
-      'data': {}
-    })
-  }
+router.get('/get/:id', async function (req, res, next) {
+  const postId = req.params.id;
+  const posts = await model.posts.findByPk(postId, {include: ['users']});
+  jwt.sign({posts:posts.id},'secretkey',(err,token)=>{
+      res.status(201).json({token});
+  });
 });
 // CREATE
-router.post('/', async function (req, res, next) {
-  try {
-    const {
-    usersId,
-    feed,
-    imgPost,
-    react,
-    comment,
-    share
-    } = req.body;
-    const posts = await model.posts.create({
-      usersId,
-      feed,
-      imgPost,
-      react,
-      comment,
-      share
-    });
-  if (posts) {
-    res.status(201).json({
-      'status': 'OK',
-      'messages': 'User berhasil ditambahkan',
-      'data': posts,
-    })
-  }
- } catch (err) {
-   res.status(400).json({
-     'status': 'ERROR',
-     'messages': err.message,
-     'data': {},
-   })
- }
+router.post('/create', async function (req, res, next) {
+  const {
+    usersId,feed,
+    imgPost,react,
+    comment,share
+  } = req.body;
+  const posts = await model.posts.create({
+    usersId,feed,
+    imgPost,react,
+    comment,share
+  });
+  jwt.sign({posts:posts.id},'secretkey',(err,token)=>{
+    res.status(201).json({token});
+  });
 });
 
 //UPDATE
-router.patch('/:id', async function (req, res, next) {
-  try {
-    const postId = req.params.id;
-    const {
-      usersId,
-      feed,
-      imgPost,
-      react,
-      comment,
-      share
-    } = req.body;
-    const posts = await model.posts.update({
-      usersId,
-      feed,
-      imgPost,
-      react,
-      comment,
-      share
-    }, {
-      where: {
-        id: postId
-      }
-    });
-    if (posts) {
-      res.json({
-        'status': 'OK',
-        'messages': 'User berhasil diupdate',
-        'data': posts,
-      })
-    }
-  } catch (err) {
-    res.status(400).json({
-      'status': 'ERROR',
-      'messages': err.message,
-      'data': {},
-    })
-  }
+router.patch('/update/:id', async function (req, res, next) {
+  const postId = req.params.id;
+  const {
+    usersId,feed,
+    imgPost,react,
+    comment,share
+  } = req.body;
+  const posts = await model.posts.update({
+    usersId,feed,
+    imgPost,react,
+    comment,share
+  }, {where: {id: postId}
+  });
+  jwt.sign({posts:posts.id},'secretkey',(err,token)=>{
+    res.status(201).json({token});
+  });
 }); 
 //delete
-router.delete('/:id', async function (req, res, next) {
-  try {
-    const postId = req.params.id;
-    const posts = await model.posts.destroy({ where: {id: postId}})
-    if (posts) {
-      res.json({
-        'status': 'OK',
-        'messages': 'User berhasil dihapus',
-        'data': posts,
-      })
-    }
-  } catch (err) {
-    res.status(400).json({
-      'status': 'ERROR',
-      'messages': err.message,
-      'data': {},
-    })
-  }
+router.delete('/delete/:id', async function (req, res, next) {
+  const postId = req.params.id;
+  const posts = await model.posts.destroy({ where: {id: postId}})
+  jwt.sign({posts:posts.id},'secretkey',(err,token)=>{
+    res.status(201).json({token});
+  });
 });
   module.exports = router;
