@@ -5,31 +5,46 @@ import HeadStateOn from './components/HeadStateOn';
 import Language from './components/Language';
 import OrLine from './components/OrLine';
 import RegisButton from './components/RegisButton';
+import {AsyncStorage} from 'react-native';
 
-const axios = require('axios')
+const axios = require('axios');
+
+
 class Login extends Component {
   constructor(props) {
     super(props);
     this.state = {
       isFocus: false,
+      email : "",
+      password: "",
       forgotOrRegisterStateText: 'Forgot Your Password?'
     }
   }
-  componentDidMount(){
-    axios.get('http://192.168.0.15:3000/users')
-.then(function (response) {
-    // handle success
-    console.log(response);
-  })
-  .catch(function (error) {
-    // handle error
-    console.log(error);
-  })
-  .finally(function () {
-    // always executed
-  });
+
+  handleLogin = () => {
+    axios
+    .post("http://192.168.0.11:3333/auth/login", {
+      email: this.state.email,
+      password: this.state.password
+    })
+    .then(res => {
+      const data = res.data.data;
+      AsyncStorage.setItem('token', res.data.token);
+      this.props.navigation.navigate('Home');
+      console.log(data)
+    })
+    .catch(err => {
+      console.log(err);
+    });
   }
 
+  async componentDidMount() {
+    const token = await AsyncStorage.getItem('token');
+    if (token !== null) {
+      this.props.navigation.navigate('Home');
+    }
+  } 
+  
   static navigationOptions = { header: null }
   onFocus() {
     this.setState({
@@ -63,21 +78,21 @@ class Login extends Component {
             <TextInput
               style={styles.usernameInput}
               placeholder="Phone or Email"
+              onChangeText={(email) => this.setState({email})}
               onFocus={() => this.onFocus()}
-              onBlur={() => this.onBlur()}
             />
             <TextInput
               style={styles.passwordInput}
               placeholder="Password"
               secureTextEntry={true}
+              onChangeText={(password) => this.setState({password})}
               onFocus={() => this.onFocus()}
-              onBlur={() => this.onBlur()}
             />
             <View style={styles.loginButton}>
               <Button
                 title="Log In"
                 color="#4E69A2"
-                onPress={() => this.props.navigation.navigate('Home')}
+                onPress={this.handleLogin}
               />
             </View>
             <TouchableOpacity onPress={this._onPressButton}>

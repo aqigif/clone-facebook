@@ -1,16 +1,7 @@
 import React, { Component } from 'react';
 import { Image, TextInput, ScrollView, Text, View, ImageBackground, Button, TouchableOpacity, StyleSheet } from 'react-native';
-class ImagePost extends Component {
-  render() {
-    return (
-      <View style={styles.photoPostWrapper}>
-      <TouchableOpacity onPress={this._onPressButton}>
-        <Image source={{ uri: this.props.image }} style={styles.photoPost} />
-      </TouchableOpacity>
-      </View>
-    )
-  }
-}
+
+
 class PostList extends Component {
   render() {
     return (
@@ -39,23 +30,20 @@ class PostList extends Component {
         <View style={styles.postBody}>
           <View style={styles.postContentWrapper}>
             <TouchableOpacity onPress={this._onPressButton}>
-              <Text style={{ fontSize: 18, color: '#1C1E21', marginBottom: 10 }}>
+              <Text style={{ fontSize: 16, color: '#1C1E21', marginBottom: 10 }}>
                 {this.props.status}
               </Text>
               <Text style={styles.hastag}>{this.props.hastag}</Text>
             </TouchableOpacity>
 
             <View style={styles.photoPostContainer}>
-              {
-                this.props.imagePost.map(function (imagePost, index) {
-                  return (
-                      <ImagePost
-                        key={index}
-                        image={imagePost.image}
-                      />
-                  )
-                })
-              }
+              
+                <View style={styles.photoPostWrapper}>
+                <TouchableOpacity onPress={this._onPressButton}>
+                <Image source={{ uri: this.props.image }} style={styles.photoPost} />
+                </TouchableOpacity>
+                </View>
+              
             </View>
 
             <TouchableOpacity onPress={this._onPressButton}>
@@ -126,7 +114,7 @@ const styles = StyleSheet.create({
     flex: 2,
     paddingBottom: 5,
   },
-  hastag: { fontWeight: 'bold', fontSize: 18, color: '#1C1E21', marginBottom: 10 },
+  hastag: { fontWeight: 'bold', fontSize: 16, color: '#1C1E21', marginBottom: 10 },
   reactContainer: { flexDirection: 'row', justifyContent: 'space-between' },
   reactWrapper: { flexDirection: 'row' },
   reactIcon: { width: 51, height: 17 },
@@ -153,8 +141,8 @@ const styles = StyleSheet.create({
     flexWrap: 'wrap'
   },
   photoPostWrapper: {
-    height: 155,
-    width: 155,
+    height: 320,
+    width: 320,
     margin: 2.5
   },
   photoPost: {

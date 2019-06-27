@@ -1,10 +1,9 @@
 import React, { Component } from 'react';
 import { Image, TextInput, ScrollView, Text, View, ImageBackground, Button, TouchableOpacity, StyleSheet } from 'react-native';
 
+import { createStackNavigator, createAppContainer } from 'react-navigation';
+
 class AddPost extends Component {
-  static navigationOptions = {
-    header: null
-  }
 
   render() {
     return (
@@ -17,11 +16,11 @@ class AddPost extends Component {
           </TouchableOpacity>
         </View>
         <View style={styles.addPostWrapper}>
-          <TextInput
-            style={styles.addPost}
-            placeholder="What's on your mind?"
-            placeholderTextColor='#454A51'
-          />
+          <View style={styles.addPost} >
+            <Text> 
+              What's on your mind?
+            </Text>
+          </View>
         </View>
         <View style={styles.uploadPhoto}>
           <TouchableOpacity onPress={this._onPressButton}>
@@ -46,9 +45,14 @@ const styles = StyleSheet.create({
     alignItems: "center",
   },
   avatar: { flex: 1, justifyContent: 'center', alignItems: 'center' },
-  addPostWrapper: { flex: 9, justifyContent: 'center', alignItems: 'center', paddingLeft: 10, paddingRight: 10 },
+  addPostWrapper: { 
+    flex: 9, justifyContent: 'center', 
+    alignItems: 'center', 
+    paddingLeft: 10, 
+    paddingRight: 10 },
   addPost: {
     width: '100%',
+    justifyContent: 'center', 
     height: 40,
     borderWidth: 1,
     paddingLeft:20,

@@ -4,16 +4,18 @@ import LoginScreen from './loginScreen/Login';
 import HomeScreen from './homeScreen/Home';
 import GroupScreen from './groupScreen/Group';
 import WatchScreen from './watchScreen/Watch';
+import MoreScreen from './moreScreen/More';
 import NotificationScreen from './notificationScreen/Notification';
 import Navbar from './TabNavigation/Navbar';
+import AddPostInput from './homeScreen/components/AddPostInput';
 import Head from './TabNavigation/Head';
 import { createStackNavigator, createAppContainer, createTopTabNavigator, createMaterialTopTabNavigator } from 'react-navigation';
-
+import {AsyncStorage} from 'react-native';
 
 const MainNavigator = createMaterialTopTabNavigator(
   {
     Home :{
-      screen:HomeScreen,
+      screen: LookRoute,
       navigationOptions:{
         tabBarIcon:({tintColor})=>(
           <Image source={require('./assets/icon/home.png')} 
@@ -64,7 +66,7 @@ const MainNavigator = createMaterialTopTabNavigator(
       },
     },
     More:{
-      screen:HomeScreen,
+      screen:MoreScreen,
       navigationOptions:{
         tabBarIcon:({tintColor})=>(
           <Image source={require('./assets/icon/more.png')} 
@@ -104,5 +106,18 @@ const WatchRoute = createStackNavigator({
   }
 })
 
-// Other code for App component her
+const LookRoute = createStackNavigator({
+  Home:{
+    screen:HomeScreen,
+    navigationOptions:{
+      header: null
+    }
+  },
+  AddPostInput : {
+    screen : AddPostInput
+  },
+},{
+  initialRouteName: 'AddPostInput'
+})
+// Other code for App component here
 export default createAppContainer(WatchRoute);
