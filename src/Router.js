@@ -11,11 +11,12 @@ import AddPostInput from './homeScreen/components/AddPostInput';
 import Head from './TabNavigation/Head';
 import { createStackNavigator, createAppContainer, createTopTabNavigator, createMaterialTopTabNavigator } from 'react-navigation';
 import {AsyncStorage} from 'react-native';
+import HomeRouter from './HomeRouter';
 
 const MainNavigator = createMaterialTopTabNavigator(
   {
     Home :{
-      screen: LookRoute,
+      screen: HomeRouter,
       navigationOptions:{
         tabBarIcon:({tintColor})=>(
           <Image source={require('./assets/icon/home.png')} 
@@ -94,10 +95,7 @@ const MainNavigator = createMaterialTopTabNavigator(
 const WatchRoute = createStackNavigator({
   watchTopTabNavigator : MainNavigator,
   Login : {
-    screen : LoginScreen,
-    navigationOptions:{
-      header: null
-    }
+    screen : LoginScreen
   },
 },{
   initialRouteName: 'Login',
@@ -106,18 +104,5 @@ const WatchRoute = createStackNavigator({
   }
 })
 
-const LookRoute = createStackNavigator({
-  Home:{
-    screen:HomeScreen,
-    navigationOptions:{
-      header: null
-    }
-  },
-  AddPostInput : {
-    screen : AddPostInput
-  },
-},{
-  initialRouteName: 'AddPostInput'
-})
 // Other code for App component here
 export default createAppContainer(WatchRoute);

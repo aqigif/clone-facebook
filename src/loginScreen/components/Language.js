@@ -20,6 +20,7 @@ class Language extends Component {
         <TouchableHighlight onPress={() => { this.setMoreLanguageModal(true); }}>
           <Text style={styles.moreLanguage}> More...</Text>
         </TouchableHighlight>
+        
         <View style={{ marginTop: 22 }}>
           <Modal
             animationType="slide"
@@ -42,6 +43,7 @@ class Language extends Component {
             </View>
           </Modal>
         </View>
+        
       </View>
 
 

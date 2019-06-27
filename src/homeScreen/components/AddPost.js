@@ -4,7 +4,6 @@ import { Image, TextInput, ScrollView, Text, View, ImageBackground, Button, Touc
 import { createStackNavigator, createAppContainer } from 'react-navigation';
 
 class AddPost extends Component {
-
   render() {
     return (
       <View style={styles.addPostContainer}>

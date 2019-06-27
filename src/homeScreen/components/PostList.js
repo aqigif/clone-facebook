@@ -36,16 +36,6 @@ class PostList extends Component {
               <Text style={styles.hastag}>{this.props.hastag}</Text>
             </TouchableOpacity>
 
-            <View style={styles.photoPostContainer}>
-              
-                <View style={styles.photoPostWrapper}>
-                <TouchableOpacity onPress={this._onPressButton}>
-                <Image source={{ uri: this.props.image }} style={styles.photoPost} />
-                </TouchableOpacity>
-                </View>
-              
-            </View>
-
             <TouchableOpacity onPress={this._onPressButton}>
               <View style={styles.reactContainer}>
                 <View style={styles.reactWrapper}>
