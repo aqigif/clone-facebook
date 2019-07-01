@@ -1,24 +1,26 @@
-import React from 'react';
-import { Button, View, Text } from 'react-native';
-import { createStackNavigator, createAppContainer } from 'react-navigation'; // Version can be specified in package.json
-import HomeScreen from './homeScreen/Home';
-import AddPostInput from './homeScreen/components/AddPostInput';
+import React from "react";
+import { Button, View, Text } from "react-native";
+import { createStackNavigator, createAppContainer } from "react-navigation"; // Version can be specified in package.json
+import HomeScreen from "./homeScreen/Home";
+import AddPostInput from "./homeScreen/components/AddPostInput";
 
-const LookRoute = createStackNavigator({
-  Home:{
-    screen:HomeScreen,
-    navigationOptions:{
-      header: null
+const LookRoute = createStackNavigator(
+  {
+    Home: {
+      screen: HomeScreen,
+      navigationOptions: {
+        header: null
+      }
+    },
+    AddPostInput: {
+      screen: AddPostInput,
+      headerBackground: ""
     }
   },
-  AddPostInput : {
-    screen : AddPostInput,
-    headerBackground:""
-  },
-},{
-  initialRouteName: 'Home'
-})
-
+  {
+    initialRouteName: "Home"
+  }
+);
 
 const AppContainer = createAppContainer(LookRoute);
 

@@ -1,11 +1,12 @@
 import React, { Component } from 'react';
-import { Image, BackAndroid, Platform, TextInput, Text, View, Button, TouchableOpacity, StyleSheet, TouchableHighlight, Modal, BackHandler } from 'react-native';
+import { Image, BackAndroid, Platform, TextInput,Alert, Text, View, Button, TouchableOpacity, StyleSheet, TouchableHighlight, Modal, BackHandler } from 'react-native';
 import HeadStateOff from './components/HeadStateOff';
 import HeadStateOn from './components/HeadStateOn';
 import Language from './components/Language';
 import OrLine from './components/OrLine';
 import RegisButton from './components/RegisButton';
 import {AsyncStorage} from 'react-native';
+import { withNavigation } from 'react-navigation';
 
 const axios = require('axios');
 
@@ -23,15 +24,19 @@ class Login extends Component {
 
   handleLogin = () => {
     axios
-    .post("http://192.168.0.11:3333/auth/login", {
+    .post("http://192.168.137.1:3333/auth/login", {
       email: this.state.email,
       password: this.state.password
     })
     .then(res => {
-      const data = res.data.data;
-      AsyncStorage.setItem('token', res.data.token);
-      this.props.navigation.navigate('Home');
-      console.log(data)
+      if (res.data.status==="Success"){
+        const data = res.data.data;
+        AsyncStorage.setItem('token', res.data.token);
+        this.props.navigation.navigate('App');
+        console.log(data)
+      } else if (res.data.status==="Failure"){
+        alert("Username or Password was Wrong!")
+      }
     })
     .catch(err => {
       console.log(err);
@@ -41,7 +46,7 @@ class Login extends Component {
   async componentDidMount() {
     const token = await AsyncStorage.getItem('token');
     if (token !== null) {
-      this.props.navigation.navigate('Home');
+      this.props.navigation.navigate('App');
     }
   } 
   
@@ -152,4 +157,4 @@ const styles = StyleSheet.create({
 
 });
 
-export default Login;
+export default withNavigation(Login);
